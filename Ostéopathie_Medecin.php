@@ -8,14 +8,15 @@ if ($xml === false) {
     die('Erreur de chargement du fichier XML.');
 }
 
-$ist = [];
+// Récupérer les médecins spécialistes en addictologie
+$osteopathie = [];
 foreach ($xml->personnels_sante as $personnel) {
     $specialite = (string) $personnel->specialite;
     $specialite_trimmed = trim($specialite);
     $specialite_lower = strtolower($specialite_trimmed);
 
-    if ($specialite_lower == 'i.s.t.') {
-        $ist[] = $personnel;
+    if ($specialite_lower == 'ostéopathie') {
+        $osteopathie[] = $personnel;
     }
 }
 
@@ -26,7 +27,7 @@ foreach ($xml->personnels_sante as $personnel) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nos Médecins Spécialistes en I.S.T</title>
+    <title>Nos Médecins Spécialistes en Ostéopathie</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -113,6 +114,7 @@ foreach ($xml->personnels_sante as $personnel) {
     </style>
 </head>
 <body>
+
 <header>
     <div class="header-top">
         <img src="Images/Logo_site.png" alt="Logo Medicare" class="logo">
@@ -120,54 +122,53 @@ foreach ($xml->personnels_sante as $personnel) {
     </div>
     <nav>
         <ul>
-            <li><a href="Accueil.php">Accueil</a></li>
+            <li><a href="Accueil_Medecin.html">Accueil</a></li>
             <li>
-                <a href="Tout_Parcourir.html">Tout Parcourir</a>
+                <a href="Tout_Parcourir_Medecin.html">Tout Parcourir</a>
                 <ul class="dropdown-menu">
-                    <li><a href="Medecin_Generaliste.php">Médecins Généralistes</a></li>
+                    <li><a href="Medecin_Generaliste_Medecin.php">Médecins Généralistes</a></li>
                     <li>
-                        <a href="Medecins_specialistes.php">Médecins Spécialistes</a>
+                        <a href="Medecins_specialistes_Medecin.php">Médecins Spécialistes</a>
                         <ul class="dropdown-submenu">
-                            <li><a href="Addictologie.php">Addictologie</a></li>
-                            <li><a href="Andrologie.php">Andrologie</a></li>
-                            <li><a href="Cardiologiephp">Cardiologie</a></li>
-                            <li><a href="Dermatologie.php">Dermatologie</a></li>
-                            <li><a href="Gastro-Hépato-Entérologie.php">Gastro-Hépato-Entérologie</a></li>
-                            <li><a href="Gynécologie.php">Gynécologie</a></li>
-                            <li><a href="I.S.T..php">I.S.T.</a></li>
-                            <li><a href="Ostéopathie.php">Ostéopathie</a></li>
+                            <li><a href="Addictologie_Medecin.php">Addictologie</a></li>
+                            <li><a href="Andrologie_Medecin.php">Andrologie</a></li>
+                            <li><a href="Cardiologie_Medecin.php">Cardiologie</a></li>
+                            <li><a href="Dermatologie_Medecin.php">Dermatologie</a></li>
+                            <li><a href="Gastro-Hépato-Entérologie_Medecin.php">Gastro-Hépato-Entérologie</a></li>
+                            <li><a href="Gynécologie_Medecin.php">Gynécologie</a></li>
+                            <li><a href="I.S.T._Medecin.php">I.S.T.</a></li>
+                            <li><a href="Ostéopathie_Medecin.php">Ostéopathie</a></li>
                         </ul>
                     </li>
-                    <li><a href="Test_Labo">Test en Laboratoire</a></li>
+                    <li><a href="Test_Labo_Medecin">Test en Laboratoire</a></li>
                 </ul>
             </li>
-            <li><a href="Rechercher.php">Recherche</a></li>
-            <li><a href="Rendez_Vous.php">Rendez-vous</a></li>
-            <li><a href="Votre_Compte.html">Votre Compte</a>
+            <li><a href="Rechercher_Medecin.php">Recherche</a></li>
+            <li><a href="Rendez_Vous_Medecin.html">Rendez-vous</a></li>
+            <li><a href="Votre_Compte_Medecin.html">Votre Compte</a>
                 <ul class="dropdown-menu">
-                    <li><a href="Votre_Compte_Client_Se_Connecter.php">Client</a></li>
-                    <li><a href="Votre_Compte_Medecin_Se_Connecter.php">Médecins</a></li>
-                    <li><a href="Votre_Compte_Administrateur_Se_Connecter.php">Administrateur</a></li>
+                    <li><a href="Votre_Profil_Medecin.php">Votre Profil</a></li>
+                    <li><a href="Accueil.php">Deconnexion</a></li>
                 </ul>
             </li>
         </ul>
     </nav>
 </header>
+
 <main class="container">
     <section>
-        <h2 class="specialists-title">Nos médecins spécialistes en IST :</h2>
+        <h2 class="specialists-title">Nos médecins spécialistes en Gynécologie :</h2>
         <div class="doctor-container">
-            <?php if (!empty($ist)): ?>
-                <?php foreach ($ist as $specialiste): ?>
+            <?php if (!empty($osteopathie)): ?>
+                <?php foreach ($osteopathie as $specialiste): ?>
                     <div class="doctor">
                         <img src="<?= htmlspecialchars($specialiste->photo) ?>" alt="Photo de <?= htmlspecialchars($specialiste->nom) ?>">
                         <div class="doctor-info">
-                            <h3><a href="Details_Medecin_Client.php?id=<?= $specialiste->id ?>" class="doctor-name-link"><?= htmlspecialchars($specialiste->nom . ' ' . $specialiste->prenom) ?></a></h3>
+                            <h3><?= htmlspecialchars($specialiste->nom . ' ' . $specialiste->prenom) ?></h3>
                             <p><?= htmlspecialchars($specialiste->specialite) ?></p>
                             <div class="actions">
                                 <button class="btn" onclick="showCV('cv-<?= $specialiste->id ?>')">Voir CV</button>
-                                <a href="Votre_Compte.html?id=<?= $specialiste->id ?>&nom=<?= urlencode($specialiste->nom . ' ' . $specialiste->prenom) ?>&specialite=<?= urlencode($specialiste->specialite) ?>" class="btn">Prendre Rendez-vous</a>
-                                <a href="Votre_Compte.html?id=<?= $specialiste->id ?>&nom=<?= urlencode($specialiste->nom . ' ' . $specialiste->prenom) ?>&specialite=<?= urlencode($specialiste->specialite) ?>" class="btn">Chattez</a>
+                                <a href="Chat.php?id=<?= $specialiste->id ?>" class="btn">Chattez</a>
                             </div>
                             <div class="cv-container" id="cv-<?= $specialiste->id ?>">
                                 <iframe class="cv-frame" src="<?= htmlspecialchars($specialiste->cv) ?>"></iframe>
@@ -176,7 +177,7 @@ foreach ($xml->personnels_sante as $personnel) {
                     </div>
                 <?php endforeach; ?>
             <?php else: ?>
-                <p>Aucun spécialiste en I.S.T. trouvé.</p>
+                <p>Aucun spécialiste en addictologie trouvé.</p>
             <?php endif; ?>
         </div>
     </section>
@@ -188,7 +189,6 @@ foreach ($xml->personnels_sante as $personnel) {
             <li><i class="fas fa-phone"></i> +33 1 23 45 67 89</li>
             <li><i class="fas fa-map-marker-alt"></i> 16 rue Sextius Michel, Paris, France</li>
         </ul>
-    </div>
 </footer>
 <script>
     function showCV(id) {

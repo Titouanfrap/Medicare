@@ -8,14 +8,15 @@ if ($xml === false) {
     die('Erreur de chargement du fichier XML.');
 }
 
-$ist = [];
+// Récupérer les médecins généralistes
+$generalistes = [];
 foreach ($xml->personnels_sante as $personnel) {
     $specialite = (string) $personnel->specialite;
     $specialite_trimmed = trim($specialite);
     $specialite_lower = strtolower($specialite_trimmed);
 
-    if ($specialite_lower == 'i.s.t.') {
-        $ist[] = $personnel;
+    if ($specialite_lower === 'médecine générale') {
+        $generalistes[] = $personnel;
     }
 }
 
@@ -26,17 +27,9 @@ foreach ($xml->personnels_sante as $personnel) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nos Médecins Spécialistes en I.S.T</title>
+    <title>Nos Médecins Généralistes</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <link rel="icon" href="Images/Logo_icone.ico" type="image/x-icon">
-
-    <!-- Bibliothèque jQuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-
-    <!-- Dernier JavaScript compilé -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <style>
 
         .container {
@@ -120,74 +113,70 @@ foreach ($xml->personnels_sante as $personnel) {
     </div>
     <nav>
         <ul>
-            <li><a href="Accueil.php">Accueil</a></li>
-            <li>
-                <a href="Tout_Parcourir.html">Tout Parcourir</a>
+            <li><a href="Accueil_Administrateur.html">Accueil</a></li>
+            <li><a href="Tout_Parcourir_Administrateur.html">Tout Parcourir</a>
                 <ul class="dropdown-menu">
-                    <li><a href="Medecin_Generaliste.php">Médecins Généralistes</a></li>
+                    <li><a href="Medecin_Generaliste_Administrateur.php" onclick="showSpecialty('Médecine générale')">Médecins Généralistes</a></li>
                     <li>
-                        <a href="Medecins_specialistes.php">Médecins Spécialistes</a>
+                        <a href="Medecins_specialistes_Administrateur.php">Médecins Spécialistes</a>
                         <ul class="dropdown-submenu">
-                            <li><a href="Addictologie.php">Addictologie</a></li>
-                            <li><a href="Andrologie.php">Andrologie</a></li>
-                            <li><a href="Cardiologiephp">Cardiologie</a></li>
-                            <li><a href="Dermatologie.php">Dermatologie</a></li>
-                            <li><a href="Gastro-Hépato-Entérologie.php">Gastro-Hépato-Entérologie</a></li>
-                            <li><a href="Gynécologie.php">Gynécologie</a></li>
-                            <li><a href="I.S.T..php">I.S.T.</a></li>
-                            <li><a href="Ostéopathie.php">Ostéopathie</a></li>
+                            <li><a href="Addictologie_Administrateur.php" onclick="showSpecialty('Addictologie')">Addictologie</a></li>
+                            <li><a href="Andrologie_Administrateur.php" onclick="showSpecialty('Andrologie')">Andrologie</a></li>
+                            <li><a href="Cardiologie_Administrateur.php" onclick="showSpecialty('Cardiologie')">Cardiologie</a></li>
+                            <li><a href="Dermatologie_Administrateur.php" onclick="showSpecialty('Dermatologie')">Dermatologie</a></li>
+                            <li><a href="Gastro-Hépato-Entérologie_Administrateur.php" onclick="showSpecialty('Gastro-Hépato-Entérologie')">Gastro-Hépato-Entérologie</a></li>
+                            <li><a href="Gynécologie_Administrateur.php " onclick="showSpecialty('Gynécologie')">Gynécologie</a></li>
+                            <li><a href="I.S.T._Administrateur.php" onclick="showSpecialty('I.S.T.')">I.S.T.</a></li>
+                            <li><a href="Ostéopathie_Administrateur.php" onclick="showSpecialty('Ostéopathie')">Ostéopathie</a></li>
                         </ul>
                     </li>
-                    <li><a href="Test_Labo">Test en Laboratoire</a></li>
+                    <li><a href="Test_Labo_Administrateur.php">Test en Laboratoire</a></li>
                 </ul>
             </li>
-            <li><a href="Rechercher.php">Recherche</a></li>
-            <li><a href="Rendez_Vous.php">Rendez-vous</a></li>
-            <li><a href="Votre_Compte.html">Votre Compte</a>
+            <li><a href="Rechercher_Administrateur.php">Recherche</a></li>
+            <li><a href="Modification_Administrateur_Ajout.php">Modifier</a></li>
+            <li><a href="Votre_Compte_Administrateur.html">Votre Compte</a>
                 <ul class="dropdown-menu">
-                    <li><a href="Votre_Compte_Client_Se_Connecter.php">Client</a></li>
-                    <li><a href="Votre_Compte_Medecin_Se_Connecter.php">Médecins</a></li>
-                    <li><a href="Votre_Compte_Administrateur_Se_Connecter.php">Administrateur</a></li>
+                    <li><a href="Votre_Compte_Client_Se_Connecter.html">Votre profil</a></li>
+                    <li><a href="Modification_Administrateur_Ajout.php">Ajouter un personnel de santé</a></li>
+                    <li><a href="Modification_Administrateur_Supprimer.php">Supprimer un personnel de santé</a></li>
+                    <li><a href="Accueil.php">Déconnexion</a></li>
                 </ul>
             </li>
         </ul>
     </nav>
 </header>
+
 <main class="container">
     <section>
-        <h2 class="specialists-title">Nos médecins spécialistes en IST :</h2>
+        <h2 class="specialists-title">Nos Médecins Généralistes :</h2>
         <div class="doctor-container">
-            <?php if (!empty($ist)): ?>
-                <?php foreach ($ist as $specialiste): ?>
+            <?php if (!empty($generalistes)): ?>
+                <?php foreach ($generalistes as $generaliste): ?>
                     <div class="doctor">
-                        <img src="<?= htmlspecialchars($specialiste->photo) ?>" alt="Photo de <?= htmlspecialchars($specialiste->nom) ?>">
+                        <img src="<?= htmlspecialchars($generaliste->photo) ?>" alt="Photo de <?= htmlspecialchars($generaliste->nom) ?>">
                         <div class="doctor-info">
-                            <h3><a href="Details_Medecin_Client.php?id=<?= $specialiste->id ?>" class="doctor-name-link"><?= htmlspecialchars($specialiste->nom . ' ' . $specialiste->prenom) ?></a></h3>
-                            <p><?= htmlspecialchars($specialiste->specialite) ?></p>
+                            <h3><?= htmlspecialchars($generaliste->nom . ' ' . $generaliste->prenom) ?></h3>
+                            <p><?= htmlspecialchars($generaliste->specialite) ?></p>
                             <div class="actions">
-                                <button class="btn" onclick="showCV('cv-<?= $specialiste->id ?>')">Voir CV</button>
-                                <a href="Votre_Compte.html?id=<?= $specialiste->id ?>&nom=<?= urlencode($specialiste->nom . ' ' . $specialiste->prenom) ?>&specialite=<?= urlencode($specialiste->specialite) ?>" class="btn">Prendre Rendez-vous</a>
-                                <a href="Votre_Compte.html?id=<?= $specialiste->id ?>&nom=<?= urlencode($specialiste->nom . ' ' . $specialiste->prenom) ?>&specialite=<?= urlencode($specialiste->specialite) ?>" class="btn">Chattez</a>
+                                <button class="btn" onclick="showCV('cv-<?= $generaliste->id ?>')">Voir CV</button>
+                                <a href="Chat.php?id=<?= $generaliste->id ?>" class="btn">Chattez</a>
                             </div>
-                            <div class="cv-container" id="cv-<?= $specialiste->id ?>">
-                                <iframe class="cv-frame" src="<?= htmlspecialchars($specialiste->cv) ?>"></iframe>
+                            <div class="cv-container" id="cv-<?= $generaliste->id ?>">
+                                <iframe class="cv-frame" src="<?= htmlspecialchars($generaliste->cv) ?>"></iframe>
                             </div>
                         </div>
                     </div>
                 <?php endforeach; ?>
             <?php else: ?>
-                <p>Aucun spécialiste en I.S.T. trouvé.</p>
+                <p>Aucun médecin généraliste trouvé.</p>
             <?php endif; ?>
         </div>
     </section>
 </main>
 <footer>
-    <div class="footer-content">
-        <ul>
-            <li><i class="fas fa-envelope"></i> <a href="mailto:email@medicare.com">email@medicare.com</a></li>
-            <li><i class="fas fa-phone"></i> +33 1 23 45 67 89</li>
-            <li><i class="fas fa-map-marker-alt"></i> 16 rue Sextius Michel, Paris, France</li>
-        </ul>
+    <div class="footer-content text-center">
+        <p>Contactez-nous: <a href="mailto:email@medicare.com">email@medicare.com</a> | Tel: +33 1 23 45 67 89 | Adresse: 16 rue Sextius Michel, Paris, France</p>
     </div>
 </footer>
 <script>
