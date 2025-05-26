@@ -1,3 +1,4 @@
+<?xml version="1.0"?>
 <Medicare>
   <administrateur>
     <id>1</id>
@@ -190,7 +191,7 @@
     <prenom>Alice</prenom>
     <email>alice.martin@exemple.com</email>
     <mot_de_passe>AZ12</mot_de_passe>
-    <specialite> Médecine Générale</specialite>
+    <specialite> M&#xE9;decine G&#xE9;n&#xE9;rale</specialite>
     <photo>Images/MedecinGeneral2.jpg</photo>
     <video/>
     <cv>Images/AliceMartin-en-MedecineGenerale.jpg</cv>
@@ -204,7 +205,7 @@
     <prenom>Benoit</prenom>
     <email>benoir.dupont@exemple.com</email>
     <mot_de_passe>ERT54</mot_de_passe>
-    <specialite>Médecine Générale</specialite>
+    <specialite>M&#xE9;decine G&#xE9;n&#xE9;rale</specialite>
     <photo>Images/MedecinGeneral.jpg</photo>
     <video/>
     <cv>Images/BenoitDupont-en-MedecineGenerale.jpg</cv>
@@ -219,7 +220,7 @@
     <prenom>Clara</prenom>
     <email>clara.moreau@exemple.com</email>
     <mot_de_passe>34ER</mot_de_passe>
-    <specialite> Médecine Générale</specialite>
+    <specialite> M&#xE9;decine G&#xE9;n&#xE9;rale</specialite>
     <photo>Images/MedecinGeneral3.jpg</photo>
     <video/>
     <cv>Images/ClaraMoreau-en-MedecineGenerale.jpg</cv>
@@ -233,7 +234,7 @@
     <prenom>David</prenom>
     <email>david.leroy@exemple.com</email>
     <mot_de_passe>3ZD4</mot_de_passe>
-    <specialite> Medecine Générale</specialite>
+    <specialite> Medecine G&#xE9;n&#xE9;rale</specialite>
     <photo>Images/MedecineGeneral4.jpg</photo>
     <video/>
     <cv>Images/DavidLeroy-en-MedecineGenerale.jpg</cv>
@@ -247,7 +248,7 @@
     <prenom>Emma</prenom>
     <email>emma.robert@exemple.com</email>
     <mot_de_passe>RE45</mot_de_passe>
-    <specialite> Médecine Générale</specialite>
+    <specialite> M&#xE9;decine G&#xE9;n&#xE9;rale</specialite>
     <photo>Images/MedecinFemme.jpg</photo>
     <video/>
     <cv>Images/EmmaRobert-en-MedecineGenerale.jpg</cv>
@@ -264,7 +265,7 @@
     <specialite> Addictologie</specialite>
     <photo>Images/MedecinGastro.jpg</photo>
     <video/>
-    <cv>Images/Médecin-en-Addictologie.jpg</cv>
+    <cv>Images/M&#xE9;decin-en-Addictologie.jpg</cv>
     <telephone>0643986543</telephone>
     <est_disponible>0</est_disponible>
     <administrateur_id>6</administrateur_id>
@@ -278,7 +279,7 @@
     <specialite> Andrologie</specialite>
     <photo>Images/MedecinAndrologie.jpg</photo>
     <video/>
-    <cv>Images/Médecin-en-Andrologie.jpg</cv>
+    <cv>Images/M&#xE9;decin-en-Andrologie.jpg</cv>
     <telephone>0712345476</telephone>
     <est_disponible>0</est_disponible>
     <administrateur_id>7</administrateur_id>
@@ -292,7 +293,7 @@
     <specialite> Cardiologie</specialite>
     <photo>Images/MedecinCardiologie.jpg</photo>
     <video/>
-    <cv>Images/Médecin-en-Cardiologie.jpg</cv>
+    <cv>Images/M&#xE9;decin-en-Cardiologie.jpg</cv>
     <telephone>065290076</telephone>
     <est_disponible>0</est_disponible>
     <administrateur_id>8</administrateur_id>
@@ -306,7 +307,7 @@
     <specialite>Dermatologie</specialite>
     <photo>Images/MedecinDermatologie.jpg</photo>
     <video/>
-    <cv>Images/Médecin-en-Dermatologie.jpg</cv>
+    <cv>Images/M&#xE9;decin-en-Dermatologie.jpg</cv>
     <telephone>0712345476</telephone>
     <est_disponible>0</est_disponible>
     <administrateur_id>9</administrateur_id>
@@ -317,10 +318,10 @@
     <prenom>Jean</prenom>
     <email>fonsmondoit.jean@medicare.com</email>
     <mot_de_passe>FV00</mot_de_passe>
-    <specialite> Gastro-Hépato-Entérologie</specialite>
+    <specialite> Gastro-H&#xE9;pato-Ent&#xE9;rologie</specialite>
     <photo>Images/MedecinGastro.jpg</photo>
     <video/>
-    <cv>Images/Médecin-en-Gastro.jpg</cv>
+    <cv>Images/M&#xE9;decin-en-Gastro.jpg</cv>
     <telephone>0641226788</telephone>
     <est_disponible>0</est_disponible>
     <administrateur_id>10</administrateur_id>
@@ -331,10 +332,10 @@
     <prenom>Margot</prenom>
     <email>vehre.margot@medicare.com</email>
     <mot_de_passe>NN90</mot_de_passe>
-    <specialite> Gynécologie</specialite>
+    <specialite> Gyn&#xE9;cologie</specialite>
     <photo>Images/MedecinGynecologie.jpg</photo>
     <video/>
-    <cv>Images/Médecin-en-Gynécologie.jpg</cv>
+    <cv>Images/M&#xE9;decin-en-Gyn&#xE9;cologie.jpg</cv>
     <telephone>0644321223</telephone>
     <est_disponible>0</est_disponible>
     <administrateur_id>11</administrateur_id>
@@ -348,7 +349,7 @@
     <specialite> I.S.T.</specialite>
     <photo>Images/MedecinIST.jpg</photo>
     <video/>
-    <cv>Images/Médecin-en-IST.jpg</cv>
+    <cv>Images/M&#xE9;decin-en-IST.jpg</cv>
     <telephone>0743667432</telephone>
     <est_disponible>0</est_disponible>
     <administrateur_id>12</administrateur_id>
@@ -359,10 +360,10 @@
     <prenom>Lucie</prenom>
     <email>lucie.bernard@exemple.com</email>
     <mot_de_passe>KJ87</mot_de_passe>
-    <specialite>Ostéopathie</specialite>
+    <specialite>Ost&#xE9;opathie</specialite>
     <photo>Images/MedecinOsteopathie.jpg</photo>
     <video/>
-    <cv>Images/Médecin-en-Osteopathie.jpg</cv>
+    <cv>Images/M&#xE9;decin-en-Osteopathie.jpg</cv>
     <telephone>0744368900</telephone>
     <est_disponible>0</est_disponible>
     <administrateur_id>13</administrateur_id>
@@ -466,12 +467,12 @@
   <Service_Laboratoire>
     <id>1</id>
     <nom_service>Test sanguin complet</nom_service>
-    <description>Un test sanguin complet pour vérifier les niveaux de globules rouges, globules blancs et plaquettes.</description>
+    <description>Un test sanguin complet pour v&#xE9;rifier les niveaux de globules rouges, globules blancs et plaquettes.</description>
   </Service_Laboratoire>
   <Service_Laboratoire>
     <id>2</id>
     <nom_service>Analyse d'urine</nom_service>
-    <description>Une analyse d'urine pour détecter les infections et d'autres anomalies.</description>
+    <description>Une analyse d'urine pour d&#xE9;tecter les infections et d'autres anomalies.</description>
   </Service_Laboratoire>
   <Service_Laboratoire>
     <id>3</id>
@@ -481,7 +482,7 @@
   <Service_Laboratoire>
     <id>3</id>
     <nom_service>Depistage IST</nom_service>
-    <description>Une analyse du sang pour détecter les infections sexuellement transmisibles.</description>
+    <description>Une analyse du sang pour d&#xE9;tecter les infections sexuellement transmisibles.</description>
   </Service_Laboratoire>
   <client>
     <carte_vitale>123</carte_vitale>
@@ -612,5 +613,22 @@
     <nom_carte>1</nom_carte>
     <date_expiration_carte>1111-11-11</date_expiration_carte>
     <code_securite_carte>1</code_securite_carte>
+  </client>
+  <client>
+    <nom>jean</nom>
+    <prenom>dicap</prenom>
+    <adresse>rue rue </adresse>
+    <ville>aris</ville>
+    <code_postal>1</code_postal>
+    <pays>france</pays>
+    <telephone>1</telephone>
+    <email>0@0</email>
+    <mot_de_passe>0</mot_de_passe>
+    <carte_vitale>1</carte_vitale>
+    <type_carte_paiement>Visa</type_carte_paiement>
+    <numero_carte>0</numero_carte>
+    <nom_carte>0</nom_carte>
+    <date_expiration_carte>0001-01-01</date_expiration_carte>
+    <code_securite_carte>0</code_securite_carte>
   </client>
 </Medicare>
