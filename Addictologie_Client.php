@@ -162,12 +162,12 @@ foreach ($xml->personnels_sante as $personnel) {
                     <div class="doctor">
                         <img src="<?= htmlspecialchars($specialiste->photo) ?>" alt="Photo de <?= htmlspecialchars($specialiste->nom) ?>">
                         <div class="doctor-info">
-                            <h3><a href="Details_Medecin_Client.php?id=<?= $specialiste->id ?>" class="doctor-name-link"><?= htmlspecialchars($specialiste->nom . ' ' . $specialiste->prenom) ?></a></h3>
+                            <h3><a href="Details_Medecin_Client.php?id=<?= $specialiste->id ?>" class="doctor-name-link"><?= htmlspecialchars($specialiste->prenom . ' ' . $specialiste->nom) ?></a></h3>
                             <p><?= htmlspecialchars($specialiste->specialite) ?></p>
                             <div class="actions">
                                 <button class="btn" onclick="showCV('cv-<?= $specialiste->id ?>')">Voir CV</button>
-                                <a href="Prendre_Rendez_Vous_Client.php?id=<?= $specialiste->id ?>&nom=<?= urlencode($specialiste->nom . ' ' . $specialiste->prenom) ?>&specialite=<?= urlencode($specialiste->specialite) ?>" class="btn">Prendre Rendez-vous</a>
-                                <a href="Chat_Client.php?id=<?= $specialiste->id ?>&nom=<?= urlencode($specialiste->nom . ' ' . $specialiste->prenom) ?>&specialite=<?= urlencode($specialiste->specialite) ?>" class="btn">Chattez</a>
+                                <a href="Prendre_Rendez_Vous_Client.php?id=<?= $specialiste->id ?>&nom=<?= urlencode($specialiste->prenom . ' ' . $specialiste->nom) ?>&specialite=<?= urlencode($specialiste->specialite) ?>" class="btn">Prendre Rendez-vous</a>
+                                <a href="Chat_Client.php?id=<?= $specialiste->id ?>&nom=<?= urlencode($specialiste->prenom . ' ' . $specialiste->nom) ?>&specialite=<?= urlencode($specialiste->specialite) ?>" class="btn">Chattez</a>
                             </div>
                             <div class="cv-container" id="cv-<?= $specialiste->id ?>">
                                 <iframe class="cv-frame" src="<?= htmlspecialchars($specialiste->cv) ?>"></iframe>

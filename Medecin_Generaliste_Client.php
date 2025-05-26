@@ -154,12 +154,12 @@ foreach ($xml->personnels_sante as $personnel) {
                     <div class="doctor">
                         <img src="<?= htmlspecialchars($generaliste->photo) ?>" alt="Photo de <?= htmlspecialchars($generaliste->nom) ?>">
                         <div class="doctor-info">
-                            <h3><a href="Details_Medecin_Client.php?id=<?= $generaliste->id ?>" class="doctor-name-link"><?= htmlspecialchars($generaliste->nom . ' ' . $generaliste->prenom) ?></a></h3>
+                            <h3><a href="Details_Medecin_Client.php?id=<?= $generaliste->id ?>" class="doctor-name-link"><?= htmlspecialchars($generaliste->prenom . ' ' . $generaliste->nom) ?></a></h3>
                             <p><?= htmlspecialchars($generaliste->specialite) ?></p>
                             <div class="actions">
                                 <button class="btn" onclick="showCV('cv-<?= $generaliste->id ?>')">Voir CV</button>
-                                <a href="Prendre_Rendez_Vous_Client.php?id=<?= $generaliste->id ?>&nom=<?= urlencode($generaliste->nom . ' ' . $generaliste->prenom) ?>&specialite=<?= urlencode($generaliste->specialite) ?>" class="btn">Prendre Rendez-vous</a>
-                                <a href="Chat_Client.php?id=<?= $generaliste->id ?>&nom=<?= urlencode($generaliste->nom . ' ' . $generaliste->prenom) ?>&specialite=<?= urlencode($generaliste->specialite) ?>" class="btn">Chattez</a>
+                                <a href="Prendre_Rendez_Vous_Client.php?id=<?= $generaliste->id ?>&nom=<?= urlencode($generaliste->prenom . ' ' . $generaliste->nom) ?>&specialite=<?= urlencode($generaliste->specialite) ?>" class="btn">Prendre Rendez-vous</a>
+                                <a href="Chat_Client.php?id=<?= $generaliste->id ?>&nom=<?= urlencode($generaliste->prenom . ' ' . $generaliste->nom) ?>&specialite=<?= urlencode($generaliste->specialite) ?>" class="btn">Chattez</a>
                             </div>
                             <div class="cv-container" id="cv-<?= $generaliste->id ?>">
                                 <iframe class="cv-frame" src="<?= htmlspecialchars($generaliste->cv) ?>"></iframe>

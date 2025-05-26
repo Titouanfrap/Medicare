@@ -4,7 +4,46 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e31088c1-8359-4342-88b8-fccc05e10a10" name="Changes" comment="" />
+    <list default="true" id="e31088c1-8359-4342-88b8-fccc05e10a10" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Accueil.php" beforeDir="false" afterPath="$PROJECT_DIR$/Accueil.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Addictologie.php" beforeDir="false" afterPath="$PROJECT_DIR$/Addictologie.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Addictologie_Administrateur.php" beforeDir="false" afterPath="$PROJECT_DIR$/Addictologie_Administrateur.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Addictologie_Client.php" beforeDir="false" afterPath="$PROJECT_DIR$/Addictologie_Client.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Addictologie_Medecin.php" beforeDir="false" afterPath="$PROJECT_DIR$/Addictologie_Medecin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Andrologie.php" beforeDir="false" afterPath="$PROJECT_DIR$/Andrologie.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Andrologie_Administrateur.php" beforeDir="false" afterPath="$PROJECT_DIR$/Andrologie_Administrateur.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Andrologie_Client.php" beforeDir="false" afterPath="$PROJECT_DIR$/Andrologie_Client.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Andrologie_Medecin.php" beforeDir="false" afterPath="$PROJECT_DIR$/Andrologie_Medecin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cardiologie.php" beforeDir="false" afterPath="$PROJECT_DIR$/Cardiologie.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cardiologie_Administrateur.php" beforeDir="false" afterPath="$PROJECT_DIR$/Cardiologie_Administrateur.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cardiologie_Client.php" beforeDir="false" afterPath="$PROJECT_DIR$/Cardiologie_Client.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cardiologie_Medecin.php" beforeDir="false" afterPath="$PROJECT_DIR$/Cardiologie_Medecin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dermatologie.php" beforeDir="false" afterPath="$PROJECT_DIR$/Dermatologie.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dermatologie_Administrateur.php" beforeDir="false" afterPath="$PROJECT_DIR$/Dermatologie_Administrateur.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dermatologie_Client.php" beforeDir="false" afterPath="$PROJECT_DIR$/Dermatologie_Client.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dermatologie_Medecin.php" beforeDir="false" afterPath="$PROJECT_DIR$/Dermatologie_Medecin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gastro-Hépato-Entérologie.php" beforeDir="false" afterPath="$PROJECT_DIR$/Gastro-Hépato-Entérologie.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gastro-Hépato-Entérologie_Administrateur.php" beforeDir="false" afterPath="$PROJECT_DIR$/Gastro-Hépato-Entérologie_Administrateur.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gastro-Hépato-Entérologie_Client.php" beforeDir="false" afterPath="$PROJECT_DIR$/Gastro-Hépato-Entérologie_Client.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gastro-Hépato-Entérologie_Medecin.php" beforeDir="false" afterPath="$PROJECT_DIR$/Gastro-Hépato-Entérologie_Medecin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gynécologie.php" beforeDir="false" afterPath="$PROJECT_DIR$/Gynécologie.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gynécologie_Administrateur.php" beforeDir="false" afterPath="$PROJECT_DIR$/Gynécologie_Administrateur.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gynécologie_Client.php" beforeDir="false" afterPath="$PROJECT_DIR$/Gynécologie_Client.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gynécologie_Medecin.php" beforeDir="false" afterPath="$PROJECT_DIR$/Gynécologie_Medecin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/I.S.T._Administrateur.php" beforeDir="false" afterPath="$PROJECT_DIR$/I.S.T._Administrateur.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/I.S.T._Client.php" beforeDir="false" afterPath="$PROJECT_DIR$/I.S.T._Client.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/I.S.T._Medecin.php" beforeDir="false" afterPath="$PROJECT_DIR$/I.S.T._Medecin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/I.S.T.php" beforeDir="false" afterPath="$PROJECT_DIR$/I.S.T..php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Medecin_Generaliste.php" beforeDir="false" afterPath="$PROJECT_DIR$/Medecin_Generaliste.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Medecins_specialistes.php" beforeDir="false" afterPath="$PROJECT_DIR$/Medecins_specialistes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ostéopathie.php" beforeDir="false" afterPath="$PROJECT_DIR$/Ostéopathie.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ostéopathie_Administrateur.php" beforeDir="false" afterPath="$PROJECT_DIR$/Ostéopathie_Administrateur.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ostéopathie_Client.php" beforeDir="false" afterPath="$PROJECT_DIR$/Ostéopathie_Client.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ostéopathie_Medecin.php" beforeDir="false" afterPath="$PROJECT_DIR$/Ostéopathie_Medecin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rechercher.php" beforeDir="false" afterPath="$PROJECT_DIR$/Rechercher.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tout_Parcourir.html" beforeDir="false" afterPath="$PROJECT_DIR$/Tout_Parcourir.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Votre_Compte_Client_Creer_Compte.php" beforeDir="false" afterPath="$PROJECT_DIR$/Votre_Compte_Client_Creer_Compte.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,6 +71,7 @@
     "RunOnceActivity.RadMigrateCodeStyle": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.readMode.enableVisualFormatting": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
@@ -63,6 +103,7 @@
       <updated>1748246180175</updated>
       <workItem from="1748246181849" duration="16000" />
       <workItem from="1748257850348" duration="7119000" />
+      <workItem from="1748277447893" duration="663000" />
     </task>
     <servers />
   </component>
