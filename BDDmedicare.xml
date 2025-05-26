@@ -189,7 +189,7 @@
     <id>1</id>
     <nom>PASSEMENT D'HONORAIRE</nom>
     <prenom>Andr&#xE9;</prenom>
-    <email>passementdhonoraire.andr&#xE9;@omneseducation.com</email>
+    <email>passementdhonoraire.andre@omneseducation.com</email>
     <mot_de_passe>AZ12</mot_de_passe>
     <specialite> M&#xE9;decine G&#xE9;n&#xE9;rale</specialite>
     <photo>Images/MedecinGeneral2.jpg</photo>
@@ -580,4 +580,45 @@
     <date_envoie>2024-05-28</date_envoie>
     <lu>1</lu>
   </Messages>
-<client><nom>test</nom><prenom>test</prenom><adresse>test</adresse><ville>test</ville><code_postal>1</code_postal><pays>test</pays><telephone>1</telephone><email>test@test</email><mot_de_passe>test</mot_de_passe><carte_vitale>1</carte_vitale><type_carte_paiement>Visa</type_carte_paiement><numero_carte>1</numero_carte><nom_carte>test</nom_carte><date_expiration_carte>11111-11-11</date_expiration_carte><code_securite_carte>1</code_securite_carte></client></Medicare>
+  <client>
+    <nom>test</nom>
+    <prenom>test</prenom>
+    <adresse>test</adresse>
+    <ville>test</ville>
+    <code_postal>1</code_postal>
+    <pays>test</pays>
+    <telephone>1</telephone>
+    <email>test@test</email>
+    <mot_de_passe>test</mot_de_passe>
+    <carte_vitale>1</carte_vitale>
+    <type_carte_paiement>Visa</type_carte_paiement>
+    <numero_carte>1</numero_carte>
+    <nom_carte>test</nom_carte>
+    <date_expiration_carte>11111-11-11</date_expiration_carte>
+    <code_securite_carte>1</code_securite_carte>
+  </client>
+  <Rendez_Vous>
+    <id>10</id>
+    <client_id/>
+    <personnel_id>1</personnel_id>
+    <jour>1</jour>
+    <heure>10:00</heure>
+    <status>1</status>
+  </Rendez_Vous>
+  <Rendez_Vous>
+    <id>11</id>
+    <client_id/>
+    <personnel_id>1</personnel_id>
+    <jour>3</jour>
+    <heure>14:00</heure>
+    <status>1</status>
+  </Rendez_Vous>
+  <Rendez_Vous>
+    <id>12</id>
+    <client_id/>
+    <personnel_id>1</personnel_id>
+    <jour>3</jour>
+    <heure>16:00</heure>
+    <status>1</status>
+  </Rendez_Vous>
+</Medicare>

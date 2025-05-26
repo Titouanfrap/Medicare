@@ -161,7 +161,7 @@ foreach ($xml->Service_Laboratoire as $service) {
                     <li><a href="Test_Labo_Client.php">Test en Laboratoire</a></li>
                 </ul>
             </li>
-            <li><a href="Recherche.html">Recherche</a></li>
+            <li><a href="Rechercher.php">Recherche</a></li>
             <li><a href="Rendez_Vous.html">Rendez-vous</a></li>
             <li><a href="Votre_Compte.html">Votre Compte</a></li>
         </ul>
