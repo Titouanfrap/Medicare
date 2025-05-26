@@ -1,58 +1,90 @@
 <?php
-// Activer l'affichage des erreurs
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Connexion à la base de données (WAMP)
+    $host = 'localhost';
+    $db = 'Medicare';
+    $user = 'root';
+    $pass = ''; // vide sur WAMP
 
-// Si le formulaire pour ajouter un membre a été soumis
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['add_member'])) {
-    // Définir le fichier XML
-    $xmlFile = 'BDDmedicare.xml';
-
-    // Vérifier si le fichier XML existe
-    if (file_exists($xmlFile)) {
-        // Charger le fichier XML
-        $xml = simplexml_load_file($xmlFile);
-
-        // Vérifier si le chargement a réussi
-        if ($xml !== false) {
-            // Créer un nouvel élément pour le membre
-            $newMember = $xml->addChild('client');
-            $newMember->addChild('nom', $_POST['nom']);
-            $newMember->addChild('prenom', $_POST['prenom']);
-            $newMember->addChild('adresse', $_POST['adresse']);
-            $newMember->addChild('ville', $_POST['ville']);
-            $newMember->addChild('code_postal', $_POST['code_postal']);
-            $newMember->addChild('pays', $_POST['pays']);
-            $newMember->addChild('telephone', $_POST['telephone']);
-            $newMember->addChild('email', $_POST['email']);
-            $newMember->addChild('mot_de_passe', $_POST['mot_de_passe']);
-            $newMember->addChild('carte_vitale', $_POST['carte_vitale']);
-            $newMember->addChild('type_carte_paiement', $_POST['type_carte_paiement']);
-            $newMember->addChild('numero_carte', $_POST['numero_carte']);
-            $newMember->addChild('nom_carte', $_POST['nom_carte']);
-            $newMember->addChild('date_expiration_carte', $_POST['date_expiration_carte']);
-            $newMember->addChild('code_securite_carte', $_POST['code_securite_carte']);
-
-
-            // Convertir le SimpleXMLElement en chaîne XML formatée
-            $xmlString = $xml->asXML();
-
-            // Créer un nouveau document DOM à partir de la chaîne XML
-            $dom = new DOMDocument;
-            $dom->preserveWhiteSpace = false;
-            $dom->formatOutput = true;
-            $dom->loadXML($xmlString);
-
-            // Sauvegarder les modifications dans le fichier XML
-            $dom->save('BDDmedicare.xml');
-
-            header('Location: Accueil_Client.php');
-        } else {
-            echo "<p class='error'>Erreur lors du chargement du fichier XML.</p>";
-        }
-    } else {
-        echo "<p class='error'>Le fichier XML n'existe pas.</p>";
+    try {
+        $pdo = new PDO("mysql:host=$host;dbname=$db;charset=utf8", $user, $pass);
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    } catch (PDOException $e) {
+        die("Erreur de connexion MySQL : " . $e->getMessage());
     }
+
+    // Récupération des données du formulaire
+    $nom = $_POST['nom'];
+    $prenom = $_POST['prenom'];
+    $adresse = $_POST['adresse'];
+    $ville = $_POST['ville'];
+    $code_postal = $_POST['code_postal'];
+    $pays = $_POST['pays'];
+    $telephone = $_POST['telephone'];
+    $email = $_POST['email'];
+    $mot_de_passe = $_POST['mot_de_passe'];
+    $carte_vitale = $_POST['carte_vitale'];
+    $type_carte_paiement = $_POST['type_carte_paiement'];
+    $numero_carte = $_POST['numero_carte'];
+    $nom_carte = $_POST['nom_carte'];
+    $date_expiration_carte = $_POST['date_expiration_carte'];
+    $code_securite_carte = $_POST['code_securite_carte'];
+
+    // Insertion dans la base de données
+    try {
+        $stmt = $pdo->prepare("INSERT INTO Clients (nom, prenom, adresse, ville, code_postal, pays, telephone, email, mot_de_passe, carte_vitale, type_carte_paiement, numero_carte, nom_carte, date_expiration_carte, code_securite_carte)
+        VALUES (:nom, :prenom, :adresse, :ville, :code_postal, :pays, :telephone, :email, :mot_de_passe, :carte_vitale, :type_carte_paiement, :numero_carte, :nom_carte, :date_expiration_carte, :code_securite_carte)");
+
+        $stmt->execute([
+            ':nom' => $nom,
+            ':prenom' => $prenom,
+            ':adresse' => $adresse,
+            ':ville' => $ville,
+            ':code_postal' => $code_postal,
+            ':pays' => $pays,
+            ':telephone' => $telephone,
+            ':email' => $email,
+            ':mot_de_passe' => $mot_de_passe,
+            ':carte_vitale' => $carte_vitale,
+            ':type_carte_paiement' => $type_carte_paiement,
+            ':numero_carte' => $numero_carte,
+            ':nom_carte' => $nom_carte,
+            ':date_expiration_carte' => $date_expiration_carte,
+            ':code_securite_carte' => $code_securite_carte
+        ]);
+    } catch (PDOException $e) {
+        echo "Erreur MySQL : " . $e->getMessage();
+        exit;
+    }
+
+    // Enregistrement dans le fichier XML
+    $xmlFile = 'BDDmedicare.xml';
+    if (file_exists($xmlFile)) {
+        $xml = simplexml_load_file($xmlFile);
+    } else {
+        $xml = new SimpleXMLElement('<clients></clients>');
+    }
+
+    $client = $xml->addChild('client');
+    $client->addChild('nom', $nom);
+    $client->addChild('prenom', $prenom);
+    $client->addChild('adresse', $adresse);
+    $client->addChild('ville', $ville);
+    $client->addChild('code_postal', $code_postal);
+    $client->addChild('pays', $pays);
+    $client->addChild('telephone', $telephone);
+    $client->addChild('email', $email);
+    $client->addChild('mot_de_passe', $mot_de_passe);
+    $client->addChild('carte_vitale', $carte_vitale);
+    $client->addChild('type_carte_paiement', $type_carte_paiement);
+    $client->addChild('numero_carte', $numero_carte);
+    $client->addChild('nom_carte', $nom_carte);
+    $client->addChild('date_expiration_carte', $date_expiration_carte);
+    $client->addChild('code_securite_carte', $code_securite_carte);
+
+    $xml->asXML($xmlFile);
+
+    echo "<p> Client enregistré avec succès dans MySQL (WAMP) et XML.</p>";
 }
 ?>
 

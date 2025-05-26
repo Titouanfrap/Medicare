@@ -155,7 +155,7 @@ foreach ($xml->personnels_sante as $personnel) {
                     <div class="doctor">
                         <img src="<?= htmlspecialchars($generaliste->photo) ?>" alt="Photo de <?= htmlspecialchars($generaliste->nom) ?>">
                         <div class="doctor-info">
-                            <h3><?= htmlspecialchars($generaliste->nom . ' ' . $generaliste->prenom) ?></h3>
+                            <h3><?= htmlspecialchars($generaliste->prenom . ' ' . $generaliste->nom) ?></h3>
                             <p><?= htmlspecialchars($generaliste->specialite) ?></p>
                             <div class="actions">
                                 <button class="btn" onclick="showCV('cv-<?= $generaliste->id ?>')">Voir CV</button>

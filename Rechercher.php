@@ -278,7 +278,7 @@ $xml = loadXMLFile($xmlFile);
                 foreach ($results['members'] as $member) {
                     echo "<div class='client'>";
                     echo "<p><img src='" . htmlspecialchars($member->photo) . "' alt='Photo de " . htmlspecialchars($member->nom) . "' /></p>";
-                    echo "<p> " . htmlspecialchars($member->nom) . "  " . htmlspecialchars($member->prenom) . "</p>";
+                    echo "<p> " . htmlspecialchars($member->prenom) . "  " . htmlspecialchars($member->nom) . "</p>";
                     echo "<p>Spécialité: " . htmlspecialchars($member->specialite) . "</p>";
 
                     // Boutons cliquables
