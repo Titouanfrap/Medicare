@@ -1,31 +1,30 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <Medicare>
   <administrateur>
     <id>1</id>
-    <nom>Bitschenaux--Durand</nom>
-    <prenom>Julien</prenom>
-    <email>julienbitschenauxdurand@gmail.com</email>
+    <nom>LAGRANGE-MAUDUIT</nom>
+    <prenom>Jacques</prenom>
+    <email>jacques.lagrangemauduit@edu.ece.fr</email>
     <mot_de_passe>admin</mot_de_passe>
   </administrateur>
   <administrateur>
     <id>2</id>
-    <nom>Delplace</nom>
-    <prenom>Maxime</prenom>
-    <email>maxime.delplace@example.com</email>
+    <nom>BERTRAND-FOLIOT</nom>
+    <prenom>Balthazar</prenom>
+    <email>balthazar.bertrandfoliot@edu.ece.fr</email>
     <mot_de_passe>admin</mot_de_passe>
   </administrateur>
   <administrateur>
     <id>3</id>
-    <nom>Gibert</nom>
+    <nom>GIBERT</nom>
     <prenom>Jules</prenom>
-    <email>jules.gibert@example.com</email>
+    <email>jules.gibert@edu.ece.fr</email>
     <mot_de_passe>admin</mot_de_passe>
   </administrateur>
   <administrateur>
     <id>4</id>
-    <nom>Kaufman</nom>
-    <prenom>Noa</prenom>
-    <email>noa.kaufman@example.com</email>
+    <nom>FRAPPAT</nom>
+    <prenom>Titouan</prenom>
+    <email>titouan.frappat@edu.ece.fr</email>
     <mot_de_passe>admin</mot_de_passe>
   </administrateur>
   <client>
@@ -589,23 +588,23 @@
     <pays>France</pays>
     <telephone>0760083152</telephone>
     <email>balthazarbf05@gmail.com</email>
-    <mot_de_passe>test</mot_de_passe>
+    <mot_de_passe>1</mot_de_passe>
     <carte_vitale>1</carte_vitale>
     <type_carte_paiement>Visa</type_carte_paiement>
     <numero_carte>1</numero_carte>
     <nom_carte>1</nom_carte>
-    <date_expiration_carte>2005-12-12</date_expiration_carte>
+    <date_expiration_carte>1111-11-11</date_expiration_carte>
     <code_securite_carte>1</code_securite_carte>
   </client>
   <client>
-    <nom>Bertrand--Foliot</nom>
-    <prenom>Balthazar</prenom>
-    <adresse>107 rue paul vaillant couturier</adresse>
-    <ville>Levallois-Perret</ville>
-    <code_postal>92300</code_postal>
-    <pays>France</pays>
-    <telephone>0760083152</telephone>
-    <email>balthazarbf05@gmail.com</email>
+    <nom>david</nom>
+    <prenom>lopez</prenom>
+    <adresse>rue de momone</adresse>
+    <ville>paris</ville>
+    <code_postal>75</code_postal>
+    <pays>france</pays>
+    <telephone>1</telephone>
+    <email>1@1</email>
     <mot_de_passe>1</mot_de_passe>
     <carte_vitale>1</carte_vitale>
     <type_carte_paiement>Visa</type_carte_paiement>

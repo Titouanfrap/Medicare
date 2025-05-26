@@ -3,21 +3,21 @@
 session_start();
 
 // Vérifier si l'ID de l'utilisateur est défini dans la session
-if(isset($_SESSION['client_id'])) {
-echo "ID de l'utilisateur : " . $_SESSION['client_id'];
-} else {
- echo "ID de l'utilisateur non trouvé dans la session.";
- }
+// if(isset($_SESSION['client_id'])) {
+//     echo "ID de l'utilisateur : " . $_SESSION['client_id'];
+// } else {
+//     echo "ID de l'utilisateur non trouvé dans la session.";
+// }
 
 // Charger le contenu du fichier XML
 $xml = simplexml_load_file('BDDmedicare.xml');
 
 // Accéder aux informations stockées dans la session pour le client
-$id = $_SESSION['client_id'];
+$id = $_SESSION['administrateur_id'];
 
 
-// Rechercher le client dans le fichier XML en fonction de son ID
-$client = $xml->xpath("//client[id='$id']")[0];
+// Rechercher le personnel de santé dans le fichier XML en fonction de son ID
+$administrateur = $xml->xpath("//administrateur[id='$id']")[0];
 
 
 ?>
@@ -82,33 +82,35 @@ $client = $xml->xpath("//client[id='$id']")[0];
     </div>
     <nav>
         <ul>
-            <li><a href="Accueil_Client.php">Accueil</a></li>
+            <li><a href="Accueil_Administrateur.html">Accueil</a></li>
             <li>
-                <a href="Tout_Parcourir_Client.html">Tout Parcourir</a>
+                <a href="Tout_Parcourir_Administrateur.html">Tout Parcourir</a>
                 <ul class="dropdown-menu">
-                    <li><a href="Medecin_Generaliste_Client.php">Médecins Généralistes</a></li>
+                    <li><a href="Medecin_Generaliste_Administrateur.php">Médecins Généralistes</a></li>
                     <li>
-                        <a href="Medecins_specialistes_Client.php">Médecins Spécialistes</a>
+                        <a href="#">Médecins Spécialistes</a>
                         <ul class="dropdown-submenu">
-                            <li><a href="Addictologie_Client.php">Addictologie</a></li>
-                            <li><a href="Andrologie_Client.php">Andrologie</a></li>
-                            <li><a href="Cardiologie_Client.php">Cardiologie</a></li>
-                            <li><a href="Dermatologie_Client.php">Dermatologie</a></li>
-                            <li><a href="Gastro-Hépato-Entérologie_Client.php">Gastro-Hépato-Entérologie</a></li>
-                            <li><a href="Gynécologie_Client.php">Gynécologie</a></li>
-                            <li><a href="I.S.T._Client.php">I.S.T.</a></li>
-                            <li><a href="Ostéopathie_Client.php">Ostéopathie</a></li>
+                            <li><a href="#" onclick="showSpecialty('Addictologie')">Addictologie</a></li>
+                            <li><a href="#" onclick="showSpecialty('Andrologie')">Andrologie</a></li>
+                            <li><a href="#" onclick="showSpecialty('Cardiologie')">Cardiologie</a></li>
+                            <li><a href="#" onclick="showSpecialty('Dermatologie')">Dermatologie</a></li>
+                            <li><a href="#" onclick="showSpecialty('Gastro-Hépato-Entérologie')">Gastro-Hépato-Entérologie</a></li>
+                            <li><a href="#" onclick="showSpecialty('Gynécologie')">Gynécologie</a></li>
+                            <li><a href="#" onclick="showSpecialty('I.S.T.')">I.S.T.</a></li>
+                            <li><a href="#" onclick="showSpecialty('Ostéopathie')">Ostéopathie</a></li>
                         </ul>
                     </li>
-                    <li><a href="Test_Labo_Client.php">Test en Laboratoire</a></li>
+                    <li><a href="#" onclick="showLaboratoire()">Test en Laboratoire</a></li>
                 </ul>
             </li>
-            <li><a href="Rechercher_Client.php">Recherche</a></li>
-            <li><a href="Rendez_Vous_Client.php">Rendez-vous</a></li>
-            <li><a href="Votre_Profil_Client.php">Votre Compte</a>
+            <li><a href="Rechercher_Administrateur.php">Recherche</a></li>
+            <li><a href="Modification_Administrateur_Ajout.php">Modifier</a></li>
+            <li><a href="Votre_Profil_Administrateur.php">Votre Compte</a>
                 <ul class="dropdown-menu">
-                    <li><a href="Votre_Profil_Client.php">Votre Profil</a></li>
-                    <li><a href="Accueil.php">Deconnexion</a></li>
+                    <li><a href="Votre_Profil_Administrateur.php">Votre profil</a></li>
+                    <li><a href="Modification_Administrateur_Ajout.php">Ajouter un personnel de santé</a></li>
+                    <li><a href="Modification_Administrateur_Supprimer.php">Supprimer un personnel de santé</a></li>
+                    <li><a href="Accueil.php">Déconnexion</a></li>
                 </ul>
             </li>
         </ul>
@@ -122,24 +124,12 @@ $client = $xml->xpath("//client[id='$id']")[0];
     <div class="container">
         <h2>Votre Profil</h2>
         <div>
-            <p><strong>Nom:</strong> <?= $client->nom ?></p>
-            <p><strong>Prénom:</strong> <?= $client->prenom ?></p>
-            <p><strong>Adresse:</strong> <?= $client->adresse ?></p>
-            <p><strong>Ville:</strong> <?= $client->ville ?></p>
-            <p><strong>Code Postal:</strong> <?= $client->code_postal ?></p>
-            <p><strong>Pays:</strong> <?= $client->pays ?></p>
-            <p><strong>Téléphone:</strong> <?= $client->telephone ?></p>
-            <p><strong>Email:</strong> <?= $client->email ?></p>
-            <p><strong>Mot de Passe:</strong> <?= $client->mot_de_passe ?></p>
-            <p><strong>Carte Vitale:</strong> <?= $client->carte_vitale ?></p>
-            <p><strong>Type de carte paiement:</strong> <?= $client->type_carte_paiement ?></p>
-            <p><strong>Numéro de carte:</strong> <?= $client->numero_carte ?></p>
-            <p><strong>Nom sur la carte:</strong> <?= $client->nom_carte ?></p>
-            <p><strong>Date d'expiration de la carte:</strong> <?= $client->date_expiration_carte ?></p>
-            <p><strong>Code de sécurité de la carte:</strong> <?= $client->code_securite_carte ?></p>
+            <p><strong>Nom:</strong> <?= $administrateur->nom ?></p>
+            <p><strong>Prénom:</strong> <?= $administrateur->prenom ?></p>
+            <p><strong>Email:</strong> <?= $administrateur->email ?></p>
+            <p><strong>Mot de Passe:</strong> <?= $administrateur->mot_de_passe ?></p>
         </div>
     </div>
-
 
     <!------------------------             ------------------------>
 
@@ -160,5 +150,4 @@ $client = $xml->xpath("//client[id='$id']")[0];
 
 <script src="scripts.js"></script>
 </body>
-
 </html>
