@@ -20,8 +20,7 @@ function searchEntries($xml, $keyword) {
 
     // Recherche dans les membres du personnel de santé
     foreach ($xml->personnels_sante as $member) {
-        if (stripos($member->nom, $keyword) !== false ||
-            stripos($member->specialite, $keyword) !== false) {
+        if (stripos($member->nom, $keyword) !== false || stripos($member->specialite, $keyword) !== false  || stripos($member->prenom, $keyword) !== false) {
             $results['members'][] = $member;
         }
     }
