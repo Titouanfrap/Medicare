@@ -186,12 +186,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['delete_member'])) {
                             <li><a href="Ostéopathie_Administrateur.php" onclick="showSpecialty('Ostéopathie')">Ostéopathie</a></li>
                         </ul>
                     </li>
-                    <li><a href="#" onclick="showLaboratoire()">Test en Laboratoire</a></li>
+                    <li><a href="Test_Labo_Administrateur.php">Test en Laboratoire</a></li>
                 </ul>
             </li>
             <li><a href="Rechercher_Administrateur.php">Recherche</a></li>
-            <li><a href="Modification_Administrateur_Ajout.php">Modifier</a></li>
-            <li><a href="Votre_Profil_Administrateur.php">Votre Compte</a>
+            <li><a href="Votre_Compte_Administrateur.html">Votre Compte</a>
                 <ul class="dropdown-menu">
                     <li><a href="Votre_Profil_Administrateur.php">Votre profil</a></li>
                     <li><a href="Modification_Administrateur_Ajout.php">Ajouter un personnel de santé</a></li>
