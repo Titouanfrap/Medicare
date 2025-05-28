@@ -126,7 +126,7 @@ foreach ($xml->personnels_sante as $personnel) {
                     <li>
                         <a href="Medecins_specialistes_Administrateur.php">Médecins Spécialistes</a>
                         <ul class="dropdown-submenu">
-                            <li><a href="Addictologie_Administrateur.php" onclick="showSpecialty('Addictologie')">Addictologie</a></li>
+                            <li><a href="Andrologie_Administrateur.php" onclick="showSpecialty('Addictologie')">Addictologie</a></li>
                             <li><a href="Andrologie_Administrateur.php" onclick="showSpecialty('Andrologie')">Andrologie</a></li>
                             <li><a href="Cardiologie_Administrateur.php" onclick="showSpecialty('Cardiologie')">Cardiologie</a></li>
                             <li><a href="Dermatologie_Administrateur.php" onclick="showSpecialty('Dermatologie')">Dermatologie</a></li>
@@ -140,10 +140,9 @@ foreach ($xml->personnels_sante as $personnel) {
                 </ul>
             </li>
             <li><a href="Rechercher_Administrateur.php">Recherche</a></li>
-            <li><a href="Modification_Administrateur_Ajout.php">Modifier</a></li>
             <li><a href="Votre_Compte_Administrateur.html">Votre Compte</a>
                 <ul class="dropdown-menu">
-                    <li><a href="Votre_Compte_Client_Se_Connecter.html">Votre profil</a></li>
+                    <li><a href="Votre_Profil_Administrateur.php">Votre profil</a></li>
                     <li><a href="Modification_Administrateur_Ajout.php">Ajouter un personnel de santé</a></li>
                     <li><a href="Modification_Administrateur_Supprimer.php">Supprimer un personnel de santé</a></li>
                     <li><a href="Accueil.php">Déconnexion</a></li>
@@ -152,7 +151,7 @@ foreach ($xml->personnels_sante as $personnel) {
         </ul>
     </nav>
 </header>
-
+    
 <main class="container">
     <section>
         <h2 class="specialists-title">Nos médecins spécialistes en Cardiologie :</h2>
