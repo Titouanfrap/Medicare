@@ -48,12 +48,15 @@ function getPatientAppointments($xml, $patient_id) {
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['cancel_appointment'])) {
     $appointment_id = (int)$_POST['appointment_id'];
 
+    $index = 0;
     foreach ($xml->Rendez_Vous as $rdv) {
         if ((int)$rdv->id == $appointment_id && (int)$rdv->client_id == $id) {
-            $rdv->status = 0; // Mettre à jour le statut à "0" pour annuler le rendez-vous
+            unset($xml->Rendez_Vous[$index]); // Supprime le nœud du rendez-vous
             break;
         }
+        $index++;
     }
+
 
     // Sauvegarder les modifications dans le fichier XML
     $xml->asXML('BDDmedicare.xml');
