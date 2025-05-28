@@ -133,40 +133,7 @@ foreach ($xml->Service_Laboratoire as $service) {
     </style>
 </head>
 <body>
-<header>
-    <div class="header-top">
-        <img src="Images/Logo_site.png" alt="Logo Medicare" class="logo">
-        <h1>Medicare: Services Médicaux</h1>
-    </div>
-    <nav>
-        <ul>
-            <li><a href="Accueil.php">Accueil</a></li>
-            <li>
-                <a href="Tout_Parcourir.html">Tout Parcourir</a>
-                <ul class="dropdown-menu">
-                    <li><a href="Médecine_générale_Client.php">Médecins Généralistes</a></li>
-                    <li>
-                        <a href="#">Médecins Spécialistes</a>
-                        <ul class="dropdown-submenu">
-                            <li><a href="Addictologie_Administrateur.php">Addictologie</a></li>
-                            <li><a href="Andrologie_Administrateur.php">Andrologie</a></li>
-                            <li><a href="Cardiologie_Administrateur.php">Cardiologie</a></li>
-                            <li><a href="Dermatologie_Administrateur.php">Dermatologie</a></li>
-                            <li><a href="Gastro-Hépato-Entérologie_Administrateur.php">Gastro-Hépato-Entérologie</a></li>
-                            <li><a href="Gynécologie_Administrateur.php">Gynécologie</a></li>
-                            <li><a href="I.S.T._Administrateur.php">I.S.T.</a></li>
-                            <li><a href="Ostéopathie_Administrateur.php">Ostéopathie</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="Test_Labo_Administrateur.php">Test en Labo</a></li>
-                </ul>
-            </li>
-            <li><a href="Recherche.html">Recherche</a></li>
-            <li><a href="Rendez_Vous.html">Rendez-vous</a></li>
-            <li><a href="Votre_Compte.html">Votre Compte</a></li>
-        </ul>
-    </nav>
-</header>
+
 <main class="container">
     <section>
         <h2 class="specialists-title">Tests en Laboratoire :</h2>
