@@ -26,8 +26,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['add_member'])) {
         $newMember->addChild('email', $_POST['email']);
         $newMember->addChild('mot_de_passe', $_POST['mot_de_passe']);
         $newMember->addChild('specialite', $_POST['specialite']);
-        $newMember->addChild('photo', $_POST['photo']);
-        $newMember->addChild('cv', $_POST['cv']);
+        $newMember->addChild('photo', 'Images/' . $_POST['photo']);
+        $newMember->addChild('cv', 'Images/'. $_POST['cv']);
         $newMember->addChild('telephone', $_POST['telephone']);
 
         // Sauvegarder les modifications dans le fichier XML

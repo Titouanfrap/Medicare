@@ -157,7 +157,7 @@ foreach ($xml->personnels_sante as $personnel) {
 </header>
 <main class="container">
     <section>
-        <h2 class="specialists-title">Nos médecins spécialistes en addictologie :</h2>
+        <h2 class="specialists-title">Nos médecins spécialistes en Addictologie :</h2>
         <div class="doctor-container">
             <?php if (!empty($addictologie)): ?>
                 <?php foreach ($addictologie as $specialiste): ?>

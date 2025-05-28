@@ -122,21 +122,21 @@ $client = $xml->xpath("//client[id='$id']")[0];
     <div class="container">
         <h2>Votre Profil</h2>
         <div>
-            <p><strong>Nom:</strong> <?= $client->nom ?></p>
-            <p><strong>Prénom:</strong> <?= $client->prenom ?></p>
-            <p><strong>Adresse:</strong> <?= $client->adresse ?></p>
-            <p><strong>Ville:</strong> <?= $client->ville ?></p>
-            <p><strong>Code Postal:</strong> <?= $client->code_postal ?></p>
-            <p><strong>Pays:</strong> <?= $client->pays ?></p>
-            <p><strong>Téléphone:</strong> <?= $client->telephone ?></p>
-            <p><strong>Email:</strong> <?= $client->email ?></p>
-            <p><strong>Mot de Passe:</strong> <?= $client->mot_de_passe ?></p>
-            <p><strong>Carte Vitale:</strong> <?= $client->carte_vitale ?></p>
-            <p><strong>Type de carte paiement:</strong> <?= $client->type_carte_paiement ?></p>
-            <p><strong>Numéro de carte:</strong> <?= $client->numero_carte ?></p>
-            <p><strong>Nom sur la carte:</strong> <?= $client->nom_carte ?></p>
-            <p><strong>Date d'expiration de la carte:</strong> <?= $client->date_expiration_carte ?></p>
-            <p><strong>Code de sécurité de la carte:</strong> <?= $client->code_securite_carte ?></p>
+            <p><strong>Nom:</strong> <?= htmlspecialchars($client->nom) ?></p>
+            <p><strong>Prénom:</strong> <?= htmlspecialchars($client->prenom) ?></p>
+            <p><strong>Adresse:</strong> <?= htmlspecialchars($client->adresse) ?></p>
+            <p><strong>Ville:</strong> <?= htmlspecialchars($client->ville) ?></p>
+            <p><strong>Code Postal:</strong> <?= htmlspecialchars($client->code_postal) ?></p>
+            <p><strong>Pays:</strong> <?= htmlspecialchars($client->pays) ?></p>
+            <p><strong>Téléphone:</strong> <?= htmlspecialchars($client->telephone) ?></p>
+            <p><strong>Email:</strong> <?= htmlspecialchars($client->email) ?></p>
+            <p><strong>Mot de Passe:</strong> <?= htmlspecialchars($client->mot_de_passe) ?></p>
+            <p><strong>Carte Vitale:</strong> <?= htmlspecialchars($client->carte_vitale) ?></p>
+            <p><strong>Type de carte paiement:</strong> <?= htmlspecialchars($client->type_carte_paiement) ?></p>
+            <p><strong>Numéro de carte:</strong> <?= htmlspecialchars($client->numero_carte) ?></p>
+            <p><strong>Nom sur la carte:</strong> <?= htmlspecialchars($client->nom_carte) ?></p>
+            <p><strong>Date d'expiration de la carte:</strong> <?= htmlspecialchars($client->date_expiration_carte) ?></p>
+            <p><strong>Code de sécurité de la carte:</strong> <?= htmlspecialchars($client->code_securite_carte) ?></p>
         </div>
     </div>
 

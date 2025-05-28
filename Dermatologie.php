@@ -14,7 +14,7 @@ foreach ($xml->personnels_sante as $personnel) {
     $specialite_trimmed = trim($specialite);
     $specialite_lower = strtolower($specialite_trimmed);
 
-    if ($specialite_lower == 'cardiologie') {
+    if ($specialite_lower == 'dermatologie') {
         $dermatologie[] = $personnel;
     }
 }
@@ -177,7 +177,7 @@ foreach ($xml->personnels_sante as $personnel) {
                     </div>
                 <?php endforeach; ?>
             <?php else: ?>
-                <p>Aucun spécialiste en addictologie trouvé.</p>
+                <p>Aucun spécialiste en dermatologie trouvé.</p>
             <?php endif; ?>
         </div>
     </section>

@@ -52,6 +52,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             ':date_expiration_carte' => $date_expiration_carte,
             ':code_securite_carte' => $code_securite_carte
         ]);
+
+        $id_client = $pdo->lastInsertId();
+
     } catch (PDOException $e) {
         echo "Erreur MySQL : " . $e->getMessage();
         exit;
@@ -66,6 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     $client = $xml->addChild('client');
+    $client->addChild('id', $id_client);
     $client->addChild('nom', $nom);
     $client->addChild('prenom', $prenom);
     $client->addChild('adresse', $adresse);
@@ -282,7 +286,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <label for="code_securite_carte">Code Sécurité CB</label>
             <input type="text" id="code_securite_carte" name="code_securite_carte" required>
         </div>
-        <button type="submit" name="add_member">Ajouter Membre</button>
+        <button type="submit" href="Accueil_Client.php" name="add_member">Ajouter Membre</button>
     </form>
 </div>
 </body>

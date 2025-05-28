@@ -127,6 +127,8 @@ foreach ($xml->personnels_sante as $personnel) {
         <div class="specialty-container">
             <?php if (!empty($specialites)): ?>
                 <?php foreach ($specialites as $specialite): ?>
+                    <?php if (html_entity_decode($specialite) === 'Médecine Générale') continue; ?>
+
                     <div class="specialty">
                         <span><?= htmlspecialchars($specialite) ?></span>
                         <a href="<?= htmlspecialchars($specialite) ?>.php" class="btn">Voir les spécialistes</a>
@@ -138,6 +140,7 @@ foreach ($xml->personnels_sante as $personnel) {
         </div>
     </section>
 </main>
+
 <footer>
     <div class="footer-content">
         <ul>
