@@ -113,46 +113,6 @@ foreach ($xml->personnels_sante as $personnel) {
     </style>
 </head>
 <body>
-<header>
-    <div class="header-top">
-        <img src="Images/Logo_site.png" alt="Logo Medicare" class="logo">
-        <h1>Medicare: Services Médicaux</h1>
-    </div>
-    <nav>
-        <ul>
-            <li><a href="Accueil_Administrateur.html">Accueil</a></li>
-            <li><a href="Tout_Parcourir_Administrateur.html">Tout Parcourir</a>
-                <ul class="dropdown-menu">
-                    <li><a href="Medecin_Generaliste_Administrateur.php" onclick="showSpecialty('Médecine générale')">Médecins Généralistes</a></li>
-                    <li>
-                        <a href="Medecins_specialistes_Administrateur.php">Médecins Spécialistes</a>
-                        <ul class="dropdown-submenu">
-                            <li><a href="Addictologie_Administrateur.php" onclick="showSpecialty('Addictologie')">Addictologie</a></li>
-                            <li><a href="Andrologie_Administrateur.php" onclick="showSpecialty('Andrologie')">Andrologie</a></li>
-                            <li><a href="Cardiologie_Administrateur.php" onclick="showSpecialty('Cardiologie')">Cardiologie</a></li>
-                            <li><a href="Dermatologie_Administrateur.php" onclick="showSpecialty('Dermatologie')">Dermatologie</a></li>
-                            <li><a href="Gastro-Hépato-Entérologie_Administrateur.php" onclick="showSpecialty('Gastro-Hépato-Entérologie')">Gastro-Hépato-Entérologie</a></li>
-                            <li><a href="Gynécologie_Administrateur.php " onclick="showSpecialty('Gynécologie')">Gynécologie</a></li>
-                            <li><a href="I.S.T._Administrateur.php" onclick="showSpecialty('I.S.T.')">I.S.T.</a></li>
-                            <li><a href="Ostéopathie_Administrateur.php" onclick="showSpecialty('Ostéopathie')">Ostéopathie</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="Test_Labo_Administrateur.php">Test en Laboratoire</a></li>
-                </ul>
-            </li>
-            <li><a href="Rechercher_Administrateur.php">Recherche</a></li>
-            <li><a href="Modification_Administrateur_Ajout.php">Modifier</a></li>
-            <li><a href="Votre_Compte_Administrateur.html">Votre Compte</a>
-                <ul class="dropdown-menu">
-                    <li><a href="Votre_Compte_Client_Se_Connecter.html">Votre profil</a></li>
-                    <li><a href="Modification_Administrateur_Ajout.php">Ajouter un personnel de santé</a></li>
-                    <li><a href="Modification_Administrateur_Supprimer.php">Supprimer un personnel de santé</a></li>
-                    <li><a href="Accueil.php">Déconnexion</a></li>
-                </ul>
-            </li>
-        </ul>
-    </nav>
-</header>
 
 
 <main class="container">
