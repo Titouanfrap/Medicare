@@ -110,7 +110,6 @@
     <cv>Images/BenoitDupont-en-MedecineGenerale.jpg</cv>
     <telephone>0736578945</telephone>
     <est_disponible>0</est_disponible>
-    <!-- 0 si dispo 1 sinon -->
     <administrateur_id>2</administrateur_id>
   </personnels_sante>
   <personnels_sante>
