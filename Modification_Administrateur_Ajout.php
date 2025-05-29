@@ -13,35 +13,57 @@ function loadXMLFile($xmlFile) {
     }
     return false;
 }
+// Connexion à la base de données
+$host = 'localhost';
+$dbname = 'medicare';
+$user = 'root'; // à adapter
+$pass = '';     // à adapter selon votre configuration
 
-// Si le formulaire pour ajouter un membre a été soumis
+try {
+    $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $user, $pass);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    die("Erreur de connexion à la base de données : " . $e->getMessage());
+}
+
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['add_member'])) {
-    // Charger le fichier XML
-    $xml = loadXMLFile($xmlFile);
-    if ($xml !== false) {
-        // Créer un nouvel élément pour le membre
-        $newMember = $xml->addChild('personnels_sante');
-        $newMember->addChild('Nom', $_POST['nom']);
-        $newMember->addChild('Prenom', $_POST['prenom']);
-        $newMember->addChild('email', $_POST['email']);
-        $newMember->addChild('mot_de_passe', $_POST['mot_de_passe']);
-        $newMember->addChild('specialite', $_POST['specialite']);
-        $newMember->addChild('photo', 'Images/' . $_POST['photo']);
-        $newMember->addChild('cv', 'Images/'. $_POST['cv']);
-        $newMember->addChild('telephone', $_POST['telephone']);
+    $nom = $_POST['nom'];
+    $prenom = $_POST['prenom'];
+    $email = $_POST['email'];
+    $mot_de_passe = $_POST['mot_de_passe'];
+    $specialite = $_POST['specialite'];
+    $telephone = $_POST['telephone'];
+    $photo = 'Images/' . $_POST['photo'];
+    $cv = 'Images/' . $_POST['cv'];
 
-        // Sauvegarder les modifications dans le fichier XML
-        if ($xml->asXML($xmlFile)) {
-            // Afficher un message de succès
-            echo "<p class='success'>Membre ajouté avec succès!</p>";
-            header('Location: Accueil_Administrateur.html');
-            exit();
-        } else {
-            echo "<p class='error'>Erreur lors de la sauvegarde du fichier XML.</p>";
-        }
-    } else {
-        echo "<p class='error'>Erreur lors du chargement du fichier XML.</p>";
+    // Insertion dans la base de données
+    $stmt = $pdo->prepare("INSERT INTO personnels_sante (nom, prenom, email, mot_de_passe, specialite, photo, cv, telephone, est_disponible)
+                           VALUES (?, ?, ?, ?, ?, ?, ?, ?, 1)");
+    $stmt->execute([$nom, $prenom, $email, $mot_de_passe, $specialite, $photo, $cv, $telephone]);
+
+    // Récupération de l'ID inséré
+    $lastInsertedId = $pdo->lastInsertId();
+
+    // Mise à jour facultative du fichier XML
+    $xml = simplexml_load_file($xmlFile);
+    if ($xml !== false) {
+        $newMember = $xml->addChild('personnels_sante');
+        $newMember->addChild('id', $lastInsertedId);
+        $newMember->addChild('nom', $nom);
+        $newMember->addChild('prenom', $prenom);
+        $newMember->addChild('email', $email);
+        $newMember->addChild('mot_de_passe', $mot_de_passe);
+        $newMember->addChild('specialite', $specialite);
+        $newMember->addChild('photo', $photo);
+        $newMember->addChild('cv', $cv);
+        $newMember->addChild('telephone', $telephone);
+        $xml->asXML($xmlFile);
     }
+
+    // Redirection ou message
+    echo "<p class='success'>Membre ajouté avec succès dans la base de données !</p>";
+    header('Location: Accueil_Administrateur.html');
+    exit();
 }
 
 ?>
@@ -224,8 +246,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['add_member'])) {
                 </div>
                 <div>
                     <label for="specialite">Spécialité</label>
-                    <input type="text" id="specialite" name="specialite" required>
+                    <select id="specialite" name="specialite" required>
+                        <option value="">-- Sélectionnez une spécialité --</option>
+                        <option value="Médecine générale">Médecine générale</option>
+                        <option value="Addictologie">Addictologie</option>
+                        <option value="Andrologie">Andrologie</option>
+                        <option value="Cardiologie">Cardiologie</option>
+                        <option value="Dermatologie">Dermatologie</option>
+                        <option value="Gastro-Hépato-Entérologie">Gastro-Hépato-Entérologie</option>
+                        <option value="Gynécologie">Gynécologie</option>
+                        <option value="I.S.T.">I.S.T.</option>
+                        <option value="Ostéopathie">Ostéopathie</option>
+                    </select>
                 </div>
+
                 <div>
                     <label for="telephone">Téléphone</label>
                     <input type="text" id="telephone" name="telephone" required>
